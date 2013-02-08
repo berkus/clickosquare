@@ -1,0 +1,40 @@
+Click-o-square version 0.0.1
+Copyright (c) 2002, Stanislav Karchebny <berk@madfire.net>
+Distributed under BSD License.
+
+This is Gtk+-2.0 reincarnation of popular Windows game Clickomania.
+
+Thanks to Jorge Arellano Cid for Dillo as both great browser and source of
+good style Gtk+ programming.
+
+
+* Features to add:
+
+Standard clickomania features:
+Animations of falling blocks.
+Additional block types (bombs and lasers..)
+
+Extra features:
+
+Multiplayer, with up to infinite number of players
+with two modes: cooperative (try cooperatively to solve the whole thing),
+competetive (the player who solves the last figure, wins).
+another competetive: who solved more figures than others earns more scores.
+Semi-sequential (next player has 15 seconds timeout within which he has to
+make his move, otherwise all other players become able to solve) and
+parallel - all players can solve simultaneously.
+One-to-one - there are two stacks, which players solve simultaneosly (as
+in tetris) the one who finishes first, wins.
+
+Internet ratings page - top 500 or something like that! (e.g. "Internet submit"
+button + some kind of protection scheme to avoid cheaters).
+(as one method - allow playing on internet server through ssl, this adds
+need for client/server interaction model).
+
+Blocks may 1) fall down and move to the left or,
+2) move outwards the center (above grid half go top, below go bottom).
+
+Playground actions:
+a) On mouse click - check where clicked and determine whether we should
+destroy some blocks? If so, push undo state, destroy them, start animation
+thread and emit "blocks_destroyed" signal.
